@@ -6,26 +6,31 @@ namespace TipCalculator
     {
         static void Main(string[] args)
         {
+            // get meal subtotal from user
             Console.WriteLine("What is your meal subtotal?");
-
-            //string subTotal = Console.ReadLine();
-            //double subTotalAmount = Convert.ToDouble(subTotal);
-
             double subTotalAmount = Convert.ToDouble(Console.ReadLine());
 
+            // get tip percentage from user
             Console.WriteLine("What is your tip percentage?  i.e - 20 = 20%");
             double tipPercentage = Convert.ToDouble(Console.ReadLine());
 
-            double tip = subTotalAmount * (tipPercentage / 100);
+            string xxx = null;
 
-            Console.WriteLine("Your " + tipPercentage + "% tip is $" + tip);
+            
+
+            // calculate tip
+            double tip = Math.Round( subTotalAmount * (tipPercentage / 100), 2);
+
+            // display calculated tip amount --- using interpolation
+            Console.WriteLine($"Your {tipPercentage}% tip is ${tip}.");
             //Console.WriteLine("Your {0:P0} tip is {1:C}", (tipPercentage/100), tip);
 
-            Console.WriteLine("Your bill total is $" + (subTotalAmount + tip));
+            // display calculated total of meal and tip ---- using interpolation
+            Console.WriteLine($"Your bill total is ${subTotalAmount + tip}.");
             //Console.WriteLine("Your bill total is {0:C}", subTotalAmount + tip);
 
             Console.ReadLine();
-
+            
         }
     }
 }
